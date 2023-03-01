@@ -2,7 +2,8 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_MyLayout.cshtml";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
 }
 
 <div style="border-block"><h2>Kategori Listesi</h2></div>
@@ -18,12 +19,13 @@
     </tr>
     @foreach (var item in Model)
     {
+        count++;
         <tr>
-            <td>@item.CategoryID</td>
-            <td>@item.CatagoryName</td>
-            <td><a href="#" class="btn btn-outline-danger">Sil</a></td>
-            <td><a href="#" class="btn btn-outline-success">Güncelle</a></td>
-            <td><a href="#" class="btn btn-outline-warning">Detaylar</a></td>
+            <td>@count</td>
+            <td>@item.CategoryName</td>
+            <td><a href="/Category/DeleteCategory/@item.CategoryID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Category/UpdateCategory/@item.CategoryID" class="btn btn-success">Güncelle</a></td>
+            <td><a href="#" class="btn btn-warning">Detaylar</a></td>
         </tr>
     }
 </table>

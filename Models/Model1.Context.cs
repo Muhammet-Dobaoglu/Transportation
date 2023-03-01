@@ -13,10 +13,10 @@ namespace Transportation.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DbTransportEntities : DbContext
+    public partial class DbTransportEntities1 : DbContext
     {
-        public DbTransportEntities()
-            : base("name=DbTransportEntities")
+        public DbTransportEntities1()
+            : base("name=DbTransportEntities1")
         {
         }
     
@@ -25,6 +25,7 @@ namespace Transportation.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<TblCategory> TblCategory { get; set; }
         public virtual DbSet<TblCustomer> TblCustomer { get; set; }
         public virtual DbSet<TblEmployee> TblEmployee { get; set; }

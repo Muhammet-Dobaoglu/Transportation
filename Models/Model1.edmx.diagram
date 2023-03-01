@@ -4,7 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5f921891e7a2473d9e14a22ec3260a71" Name="Diagram1">
+      <Diagram DiagramId="d25e4dca92ef411ea96e63f6f76faa4c" Name="Diagram1">
+        <EntityTypeShape EntityType="DbTransportModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DbTransportModel.TblCategory" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DbTransportModel.TblCustomer" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
         <EntityTypeShape EntityType="DbTransportModel.TblEmployee" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />

@@ -11,7 +11,7 @@ namespace Transportation.Controllers
 {
     public class TransportationController : Controller
     {
-        DbTransportEntities1 db = new DbTransportEntities1();
+        DbTransportEntities2 db = new DbTransportEntities2();
         public ActionResult Index()
         {
             var values = db.TblTransportation.ToList();

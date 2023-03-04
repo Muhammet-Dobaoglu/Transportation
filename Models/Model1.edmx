@@ -15,12 +15,24 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+        <EntityType Name="TblAbout">
+          <Key>
+            <PropertyRef Name="AboutId" />
+          </Key>
+          <Property Name="AboutId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SmallTitle" Type="varchar(max)" />
+          <Property Name="LargeTitle" Type="varchar(max)" />
+          <Property Name="AboutImage" Type="nvarchar(max)" />
+          <Property Name="AboutContent" Type="nvarchar(max)" />
+          <Property Name="AboutStatus" Type="varchar" MaxLength="10" />
+        </EntityType>
         <EntityType Name="TblCategory">
           <Key>
             <PropertyRef Name="CategoryID" />
           </Key>
           <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CategoryName" Type="nvarchar" MaxLength="50" />
+          <Property Name="AboutStatus" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="TblCustomer">
           <Key>
@@ -31,6 +43,7 @@
           <Property Name="CustomerSurname" Type="nvarchar" MaxLength="50" />
           <Property Name="CustomerCity" Type="nvarchar" MaxLength="50" />
           <Property Name="CustomerPhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="AboutStatus" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="TblEmployee">
           <Key>
@@ -41,6 +54,7 @@
           <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="50" />
           <Property Name="EmployeeDescription" Type="nvarchar(max)" />
           <Property Name="EmployeeImage" Type="nvarchar(max)" />
+          <Property Name="AboutStatus" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="TblProcess">
           <Key>
@@ -49,6 +63,7 @@
           <Property Name="ProcessID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Transportation" Type="int" />
           <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="AboutStatus" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="TblProduct">
           <Key>
@@ -59,6 +74,7 @@
           <Property Name="ProductSizeType" Type="nvarchar" MaxLength="50" />
           <Property Name="ProductSize" Type="nvarchar" MaxLength="50" />
           <Property Name="ProductDescription" Type="nvarchar" MaxLength="50" />
+          <Property Name="AboutStatus" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="TblTransportation">
           <Key>
@@ -74,6 +90,7 @@
           <Property Name="Arrival" Type="nvarchar" MaxLength="50" />
           <Property Name="Date" Type="date" />
           <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="TransportationStatus" Type="nchar" MaxLength="10" />
         </EntityType>
         <Association Name="FK_TblProcess_TblTransportation">
           <End Role="TblTransportation" Type="Self.TblTransportation" Multiplicity="0..1" />
@@ -137,6 +154,7 @@
         </Association>
         <EntityContainer Name="DbTransportModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblAbout" EntityType="Self.TblAbout" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblCategory" EntityType="Self.TblCategory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblCustomer" EntityType="Self.TblCustomer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblEmployee" EntityType="Self.TblEmployee" Schema="dbo" store:Type="Tables" />
@@ -179,12 +197,24 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
+        <EntityType Name="TblAbout">
+          <Key>
+            <PropertyRef Name="AboutId" />
+          </Key>
+          <Property Name="AboutId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SmallTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LargeTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="AboutImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AboutContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AboutStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
         <EntityType Name="TblCategory">
           <Key>
             <PropertyRef Name="CategoryID" />
           </Key>
           <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AboutStatus" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="TblTransportation" Relationship="Self.FK_TblTransportation_TblCategory" FromRole="TblCategory" ToRole="TblTransportation" />
         </EntityType>
         <EntityType Name="TblCustomer">
@@ -196,6 +226,7 @@
           <Property Name="CustomerSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="CustomerCity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="CustomerPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AboutStatus" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="TblTransportation" Relationship="Self.FK_TblTransportation_TblCustomer" FromRole="TblCustomer" ToRole="TblTransportation" />
         </EntityType>
         <EntityType Name="TblEmployee">
@@ -207,6 +238,7 @@
           <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="EmployeeDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="EmployeeImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AboutStatus" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="TblTransportation" Relationship="Self.FK_TblTransportation_TblEmployee" FromRole="TblEmployee" ToRole="TblTransportation" />
         </EntityType>
         <EntityType Name="TblProcess">
@@ -216,6 +248,7 @@
           <Property Name="ProcessID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Transportation" Type="Int32" />
           <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AboutStatus" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="TblTransportation" Relationship="Self.FK_TblProcess_TblTransportation" FromRole="TblProcess" ToRole="TblTransportation" />
         </EntityType>
         <EntityType Name="TblProduct">
@@ -227,6 +260,7 @@
           <Property Name="ProductSizeType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ProductSize" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ProductDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AboutStatus" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="TblTransportation" Relationship="Self.FK_TblTransportation_TblProduct" FromRole="TblProduct" ToRole="TblTransportation" />
         </EntityType>
         <EntityType Name="TblTransportation">
@@ -243,6 +277,7 @@
           <Property Name="Arrival" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Date" Type="DateTime" Precision="0" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TransportationStatus" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="TblCategory" Relationship="Self.FK_TblTransportation_TblCategory" FromRole="TblTransportation" ToRole="TblCategory" />
           <NavigationProperty Name="TblCustomer" Relationship="Self.FK_TblTransportation_TblCustomer" FromRole="TblTransportation" ToRole="TblCustomer" />
           <NavigationProperty Name="TblEmployee" Relationship="Self.FK_TblTransportation_TblEmployee" FromRole="TblTransportation" ToRole="TblEmployee" />
@@ -309,8 +344,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="DbTransportEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="DbTransportEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="TblAbout" EntityType="Self.TblAbout" />
           <EntitySet Name="TblCategory" EntityType="Self.TblCategory" />
           <EntitySet Name="TblCustomer" EntityType="Self.TblCustomer" />
           <EntitySet Name="TblEmployee" EntityType="Self.TblEmployee" />
@@ -343,7 +379,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DbTransportModelStoreContainer" CdmEntityContainer="DbTransportEntities1">
+        <EntityContainerMapping StorageEntityContainer="DbTransportModelStoreContainer" CdmEntityContainer="DbTransportEntities2">
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="DbTransportModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
@@ -355,11 +391,24 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="TblAbout">
+            <EntityTypeMapping TypeName="DbTransportModel.TblAbout">
+              <MappingFragment StoreEntitySet="TblAbout">
+                <ScalarProperty Name="AboutId" ColumnName="AboutId" />
+                <ScalarProperty Name="SmallTitle" ColumnName="SmallTitle" />
+                <ScalarProperty Name="LargeTitle" ColumnName="LargeTitle" />
+                <ScalarProperty Name="AboutImage" ColumnName="AboutImage" />
+                <ScalarProperty Name="AboutContent" ColumnName="AboutContent" />
+                <ScalarProperty Name="AboutStatus" ColumnName="AboutStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="TblCategory">
             <EntityTypeMapping TypeName="DbTransportModel.TblCategory">
               <MappingFragment StoreEntitySet="TblCategory">
                 <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
                 <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="AboutStatus" ColumnName="AboutStatus" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -371,6 +420,7 @@
                 <ScalarProperty Name="CustomerSurname" ColumnName="CustomerSurname" />
                 <ScalarProperty Name="CustomerCity" ColumnName="CustomerCity" />
                 <ScalarProperty Name="CustomerPhone" ColumnName="CustomerPhone" />
+                <ScalarProperty Name="AboutStatus" ColumnName="AboutStatus" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -382,6 +432,7 @@
                 <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
                 <ScalarProperty Name="EmployeeDescription" ColumnName="EmployeeDescription" />
                 <ScalarProperty Name="EmployeeImage" ColumnName="EmployeeImage" />
+                <ScalarProperty Name="AboutStatus" ColumnName="AboutStatus" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -391,6 +442,7 @@
                 <ScalarProperty Name="ProcessID" ColumnName="ProcessID" />
                 <ScalarProperty Name="Transportation" ColumnName="Transportation" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="AboutStatus" ColumnName="AboutStatus" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -402,6 +454,7 @@
                 <ScalarProperty Name="ProductSizeType" ColumnName="ProductSizeType" />
                 <ScalarProperty Name="ProductSize" ColumnName="ProductSize" />
                 <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+                <ScalarProperty Name="AboutStatus" ColumnName="AboutStatus" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -418,6 +471,7 @@
                 <ScalarProperty Name="Arrival" ColumnName="Arrival" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="TransportationStatus" ColumnName="TransportationStatus" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

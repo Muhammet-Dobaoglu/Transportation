@@ -7,7 +7,7 @@ namespace AkademiPlus_Transportation.Controllers
 {
     public class CustomerController : Controller
     {
-        DbTransportEntities1 db = new DbTransportEntities1();
+        DbTransportEntities2 db = new DbTransportEntities2();
         public ActionResult Index()
         {
             var values = db.TblCustomer.ToList();

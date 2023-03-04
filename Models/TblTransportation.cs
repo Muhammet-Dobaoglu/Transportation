@@ -30,6 +30,7 @@ namespace Transportation.Models
         public string Arrival { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
         public string Description { get; set; }
+        public string TransportationStatus { get; set; }
     
         public virtual TblCategory TblCategory { get; set; }
         public virtual TblCustomer TblCustomer { get; set; }

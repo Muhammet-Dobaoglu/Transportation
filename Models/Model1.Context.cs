@@ -13,10 +13,10 @@ namespace Transportation.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DbTransportEntities1 : DbContext
+    public partial class DbTransportEntities2 : DbContext
     {
-        public DbTransportEntities1()
-            : base("name=DbTransportEntities1")
+        public DbTransportEntities2()
+            : base("name=DbTransportEntities2")
         {
         }
     
@@ -26,6 +26,7 @@ namespace Transportation.Models
         }
     
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<TblAbout> TblAbout { get; set; }
         public virtual DbSet<TblCategory> TblCategory { get; set; }
         public virtual DbSet<TblCustomer> TblCustomer { get; set; }
         public virtual DbSet<TblEmployee> TblEmployee { get; set; }

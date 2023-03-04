@@ -10,7 +10,7 @@ namespace AkademiPlus_Transportation.Controllers
 
     public class ProductController : Controller
     {
-        DbTransportEntities1 db = new DbTransportEntities1();
+        DbTransportEntities2 db = new DbTransportEntities2();
         // GET: Product
         public ActionResult Index()
         {

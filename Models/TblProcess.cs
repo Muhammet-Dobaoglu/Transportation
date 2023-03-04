@@ -17,6 +17,7 @@ namespace Transportation.Models
         public int ProcessID { get; set; }
         public Nullable<int> Transportation { get; set; }
         public string Description { get; set; }
+        public string AboutStatus { get; set; }
     
         public virtual TblTransportation TblTransportation { get; set; }
     }

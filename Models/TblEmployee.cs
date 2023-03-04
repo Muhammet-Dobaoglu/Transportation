@@ -25,6 +25,7 @@ namespace Transportation.Models
         public string EmployeeSurname { get; set; }
         public string EmployeeDescription { get; set; }
         public string EmployeeImage { get; set; }
+        public string AboutStatus { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TblTransportation> TblTransportation { get; set; }

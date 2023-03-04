@@ -9,34 +9,58 @@
     <title>Transport Admin Paneli</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="margin-bottom:30px">
+        <a class="navbar-brand" style="margin-left:25px"href="#">
+            Transportation
+        </a>
 
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">Transportation</a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Ana Sayfa</a></li>
-                <li><a href="/Category/Index/">Kategoriler</a></li>
-                <li><a href="/Employee/Index">Personel</a></li>
-                <li><a href="/Customer/Index">Müşteriler</a></li>
-                <li><a href="/Product/Index/">Ürünler</a></li>
-                <li><a href="/Process/Index/">İşlemler</a></li>
-                <li><a href="/Transportation/Index/">Taşıma</a></li>
-                <li><a href="#">Ayarlar</a></li>
-                <li><a href="#">Çıkış Yap</a></li>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Anasayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Category/Index/">Kategoriler</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Employee/Index">Personel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Customer/Index">Müşteriler</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Product/Index/">Ürünler</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Process/Index/">İşlemler</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Transportation/Index/">Taşıma</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Ayarlar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Statistic/Index/">İstatistikler</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Çıkış Yap</a>
+                </li>
             </ul>
         </div>
     </nav>
 
+
     <div class="container">
         @RenderBody()
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 </body>
 </html>

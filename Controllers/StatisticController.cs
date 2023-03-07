@@ -18,7 +18,7 @@ namespace Transportation.Controllers
 
             ViewBag.categoryCount = db.TblCategory.Count();
 
-            ViewBag.citySelect = db.TblCustomer.Where(x => x.CustomerID == 1).Select(y => y.CustomerCity);
+            ViewBag.citySelect = db.TblCustomer.Where(x => x.CustomerID == 1).Select(y => y.CustomerCity).FirstOrDefault();
 
             return View();
         }

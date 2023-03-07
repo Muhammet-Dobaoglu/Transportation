@@ -14,7 +14,7 @@ namespace Transportation.Controllers
         {
             ViewBag.customerCount = db.TblCustomer.Count();
             
-            ViewBag.cityAnkara = db.TblCustomer.Where(x => x.CustomerCity == "Ankara").Count();
+            ViewBag.cityAnkara = db.TblCustomer.Where(x => x.CustomerCity == "Ankara").Count(); 
             
             ViewBag.categoryCount = db.TblCategory.Count();
             

@@ -8,5 +8,5 @@
 <img width="1910" alt="Ekran Resmi 2023-03-06 10 35 38" src="https://user-images.githubusercontent.com/106467744/223672001-2a79f160-d8fc-434e-b4d9-2f73cdd6e807.png">
  <img width="1689" alt="Ekran Resmi 2023-03-08 13 13 15" src="https://user-images.githubusercontent.com/106467744/224136028-2418ba99-a376-41d4-b9af-fa89ab262d18.png">
 
-
+ 
 
